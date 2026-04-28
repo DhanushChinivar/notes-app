@@ -63,7 +63,7 @@ npm start
 
 ### 4. Environment Variables (backend/.env)
 ```
-PORT=5000
+PORT=5001
 MONGO_URI=mongodb://localhost:27017/notes-app
 JWT_SECRET=your-super-secret-key
 ANTHROPIC_API_KEY=your-api-key   # optional – falls back to mock
