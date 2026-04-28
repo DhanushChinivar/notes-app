@@ -81,8 +81,9 @@ router.post('/:id/summarize', async (req, res) => {
     }
 
     const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
+    const hasValidKey = ANTHROPIC_API_KEY && ANTHROPIC_API_KEY.startsWith('sk-ant-');
 
-    if (!ANTHROPIC_API_KEY) {
+    if (!hasValidKey) {
       // Fallback mock summary if no API key
       const mockSummary = `Summary of "${note.title}": ${note.content.slice(0, 100)}...`;
       note.summary = mockSummary;
